@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Làm người yêu tớ nhé? ❤️</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe6e6;
+            text-align: center;
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 2.5rem;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        #yesBtn {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .img-heart {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://cdn11.dienmaycholon.vn/filewebdmclnew/DMCL21/Picture/News/News_expe_14115/14115.png?version=071244" alt="Cute gif" class="img-heart">
+        <h1>Làm người yêu tớ nhé? ❤️</h1>
+        
+        <div class="buttons">
+            <button id="yesBtn">Đồng ý</button>
+            <button id="noBtn">Không</button>
+        </div>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        let fontSize = 1.2; // Đơn vị rem
+
+        const messages = [
+    "Ơ kìa, suy nghĩ lại đi...",
+    "Cậu chắc chưa? 🤨",
+    "Thật luôn hả? 💔",
+    "Nút Đồng ý ngon hơn mà!",
+    "Đừng màaaa 😭",
+    "Tớ sẽ buồn lắm đấy!",
+    "Nhấn Đồng ý đi mà...",
+    "Từ chối là tối nay mất ngủ đó!",
+    "Cậu nhẫn tâm vậy sao? 🥺",
+    "Thử nhấn nút xanh xem có gì bất ngờ nào!",
+    "Vẫn bấm 'Không' tiếp à? Lì quá đi!",
+    "Tớ sẽ hỏi cho đến khi cậu đồng ý mới thôi!",
+    "Coi chừng nút 'Không' biến mất đấy nhé!",
+    "Đừng để tớ phải năn nỉ thêm 100 lần nữa...",
+    "Say YES đi, tớ bao đi trà sữa! 🧋",
+    "Nút 'Không' bị hỏng rồi, đừng bấm nữa!",
+    "Ông trời bảo cậu phải nhấn nút 'Đồng ý'!"
+];
+
+
+        noBtn.addEventListener('click', () => {
+            // Tăng kích thước nút Đồng ý
+            fontSize += 0.5; 
+            yesBtn.style.fontSize = fontSize + "rem";
+            yesBtn.style.padding = (fontSize * 10) + "px " + (fontSize * 20) + "px";
+
+            // Đổi text của nút Không cho vui nhộn
+            const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+            noBtn.innerText = randomMsg;
+        });
+
+        yesBtn.addEventListener('click', () => {
+            document.body.innerHTML = `
+                <div class="container">
+                    <img src="https://cdn11.dienmaycholon.vn/filewebdmclnew/DMCL21/Picture/News/News_expe_14115/14115.png?version=071244" width="200">
+                    <h1 style="color: #d63384;">Tớ biết mà tớ cũng thích cậu nhiều lắm </h1>
+                </div>
+            `;
+        });
+    </script>
+
+</body>
+</html>
